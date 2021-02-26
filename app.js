@@ -55,15 +55,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 //eslint-disable-line
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  let h = sum(a, b)[0];
-  let g = sum(h, c)[0];
-  let x = multiply(a, b)[0];
-  let y = multiply(x, c)[0];
+  let sumThreeNumbers = sum(sum(a,b)[0],c)[0];
+let multiplyThreeNumbers = multiply(multiply(a,b)[0],c)[0];  
+let resultStringsum = a +' and '+ b + ' and '+ c +' sum to '+ sumThreeNumbers +'.';
+let resultStringmultiply ='The product of '+a+' and '+b+' and '+c+' is '+multiplyThreeNumbers+'.';
+return [sumThreeNumbers,multiplyThreeNumbers,resultStringsum,resultStringmultiply];
 
 
   // Here is the test for sumAndMultiply(); uncomment it to run it
   // testSumAndMultiply(4,7,5);
-  return [g, y, +a + " and " + b + " and " + c + " sum to " + g + ".", "The product of " + a + " and " + b + " and " + c + " is " + y + "."];
 }
 
 
@@ -115,16 +115,16 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
+//let testArray = [2, 3, 4]; //eslint-disable-line
 function multiplyArray([a,s,d]) {
-  let testArray = [2, 3, 4]; //eslint-disable-line
    
   let r = multiply(a,s)[0];
   let t = multiply(r,d)[0];
   return [t ,"The numbers " + a + "," + s + "," + d + " have a product of " + t + "." ];  //eslint-disable-line
 }
+testMultiplyArray(testArray);
 
 // Here is the test for multiplyArray(); uncomment it to run it
- testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
